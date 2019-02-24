@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+
+    <h1>Login</h1>
+    <h4 style="color: red;"> {{error}}</h4>
+    <br/>
+    <form method="POST" action="{% url 'home' %}">
+        {% csrf_token %}
+        Username: <br/>
+        <input type="text" name="username"><br/>
+        Password: <br/>
+        <input type="password" name="password"/><br/>
+        <br/>
+        <input type="submit" value="Login" class="btn btn-primary"/>
+
+    </form>
+
+
+{% endblock %}
